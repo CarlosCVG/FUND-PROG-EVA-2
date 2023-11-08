@@ -12,14 +12,14 @@ import java.util.Scanner;
 public class Ejercicio8 {
 
     public static void main(String[] args) {
-
         Scanner teclado = new Scanner(System.in);
-        char caracter;
+        String caracter;
         do {
             System.out.println("Introduce un caracter:");
-            caracter = teclado.next().charAt(0);
-
-            switch (caracter) {
+            caracter = teclado.nextLine();
+            
+            if (caracter.length() != 0){
+            switch (caracter.charAt(0)) {
                 case 'a':
                     System.out.println("Vocal");
                     break;
@@ -50,13 +50,12 @@ public class Ejercicio8 {
                 case 'U':
                     System.out.println("Vocal");
                     break;
-                case ' ':
-                    break;
                 default:
                     System.out.println("Consonante");
             }
-            
-        } while (caracter != ' ');
+            }
+        } while (caracter.length() != 0);
+        
     }
 }
 
